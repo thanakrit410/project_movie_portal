@@ -1,0 +1,77 @@
+<%- include("../in/header.ejs") %>
+    <link rel="stylesheet" href="/st/ticket.css">
+
+
+    <body>
+        <div class="container">
+            <h1>Ticket page</h1>
+
+            <h1>name:<%= data.movie.name %>
+            </h1>
+            <div class="grid-container grid-container--fill" id="allSeat">
+                <% Array.from(Array( data.theater.maxSeat )).forEach(function(item, index) { %>
+                    <% if(data.reserved.includes(index+1)) { %>
+
+
+                        <div class="seat reserved" onclick="selectSeat(event)">
+                            <%= index+1 %>
+                        </div>
+
+                        <%}else{%>
+                            <div class="seat" onclick="selectSeat(event)">
+                                <%= index+1 %>
+                            </div>
+                            <%}%>
+                                <% }) %>
+
+            </div>
+            <button class="btn btn-outline-primary" type="button" onclick="buyTicket()">Buy ticket</button>
+        </div>
+        <script>
+            let selectTargetSeat = null;
+            function selectSeat(event) {
+                if (!event.target.classList.contains('reserved')) {
+                    //ถ้ามีการเลือกแล้วให้ removeclass นี้ออก
+                    if(event.target.classList.contains('selected')){
+                        event.target.classList.remove("selected");
+                    }
+                    else{
+                        
+                        event.target.classList.add("selected");
+                    }
+                }
+            }
+            async function buyTicket() {
+                console.log(window.location.href)
+                const arrPath = window.location.href.split("/");
+                console.log(arrPath)
+                let allElement = document.getElementById("allSeat")
+                for (i = 0; i < allElement.children.length; i++) {
+
+                    if (allElement.children[i].classList.contains('selected')) {
+                        let targetSeat = allElement.children[i].textContent.trim()
+                        const data = {
+                            theaterID: arrPath[4],
+                            movieID: arrPath[5],
+                            target_seat: targetSeat
+                        }
+                        console.log(targetSeat)
+                        await fetch("http://localhost:4000/ticket/buyticket", {
+                            method: 'POST',
+                            body: JSON.stringify(data),
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+
+
+                        })
+                        location.reload();
+                    }
+                }
+            }
+        </script>
+
+    </body>
+
+    </html>

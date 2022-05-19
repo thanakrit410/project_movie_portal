@@ -1,0 +1,10 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Cinema.css">
+<body>
+    <div class="container">
+            <% theaters.forEach(function(theater){ %>
+                <a href="/theater/<%= theater._id %>" class="button button1"><h1><%= theater.name %></h1></a>    
+            <% }) %>  
+    </div>  
+</body>
+<%- include("../in/footer.ejs") %>

@@ -1,0 +1,15 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Cinema.css">
+<body>
+    <% data.forEach(function(item){ %>
+        <h1>theater:<%= item.theater.name %></h1> 
+        <h1>show time:<%= item.onair_time %></h1> 
+        <h1>name time:<%= item.movie.name %></h1> 
+        <img src="<%= item.movie.image %>">
+        <h1>rate :<%= item.movie.rate %></h1> 
+        <h1>category :<%= item.movie.category %></h1>
+        <h1>timemovie :<%= item.movie.timemovie %></h1>
+        <a href="/Pagemovie/<%= item.theater._id %>" class="btn btn-sm btn-outline-secondary">View</a>
+    <% }) %>
+</body>
+<%- include("../in/footer.ejs") %>

@@ -1,0 +1,121 @@
+.blog-header-logo
+{
+    color: blue;
+}
+.container
+{
+
+    margin-top: 2px;
+}
+.p-2
+{
+    padding: 20px 50px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border: 0px;
+    background: transparent;
+    position: relative;
+    margin: 20px;
+    transition: all 0.25s ease;
+    margin-top: 0px;
+    color: white;
+}
+.logo
+{
+    text-align: center;
+    display: inline-block;
+}
+.p-2:hover::after
+{
+    width: 100%;
+}
+.p-2::after{
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    width:10px;
+    height: 5px;
+    background: linear-gradient(300deg,white, rgb(168, 14, 14));
+    left:0;
+    bottom: 0;
+    z-index:-1;
+    transition: all 0.25s ease;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slide
+{
+    width:  85% ;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 20px 5px rgb(151, 151, 150);
+    overflow: hidden;
+    border: 8px solid linear-gradient(300deg,white, rgb(168, 14, 14)) ;
+    border-radius: 10px;
+
+}
+.slide figure img
+{
+    width: 20%;
+    height: 600px;
+    float: left;
+}
+.slide figure{
+    position: relative;
+    width: 50%;
+    width: 500%;
+    margin: 0px;
+    left: 0px;
+    animation: krutom 20s infinite linear;
+}
+@keyframes krutom{
+    0%{left: 0%;}
+    15%{left: 0%;}
+    20%{left: -100%;}
+    35%{left: -100%;}
+    40%{left: -200%;}
+    60%{left: -200%;}
+    65%{left: -300%;}
+    80%{left: -300%;}
+    85%{left: -400%;}
+    100%{left: -400%;}
+}
+body
+{
+    /*background: linear-gradient(100deg,#690674, rgb(0, 0, 0));*/
+    
+}
+.row
+{
+    background-color: rgba(rgb(250, 243, 243), rgb(142, 143, 142), rgb(243, 243, 245), 50);
+}
+.container
+{
+    background-color: rgba(rgb(250, 243, 243), rgb(142, 143, 142), rgb(243, 243, 245), 50);
+}
+.col
+{
+    /*width: 450px;*/
+    align-items: center;
+}
+
+.box
+{
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 65px;
+    align-items: center;
+    left: auto;
+    background-color: rgba(rgb(176, 174, 174), rgb(231, 232, 231), rgb(140, 140, 149), 3)
+}
+.card-text
+{
+    color: white;
+}
+.btn-outline-secondary
+{
+    color:white;
+    background-color:  linear-gradient(300deg,white, rgb(168, 14, 14));;
+}
+

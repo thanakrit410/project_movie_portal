@@ -1,0 +1,47 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Page.css">
+<div class="container">
+<h1>Edit your new movie</h1>
+<form action="/showmovie/<%= showmovie.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<div class="mb-3">
+    <label class="form-label">name</label>
+    <input type="text" class="form-control" name="showmovie[name]" placeholder="<%= showmovie.name %>", value = "<%= showmovie.name %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">date</label>
+    <input type="text" class="form-control" name="showmovie[date]" placeholder="<%= showmovie.date %>", value = "<%= showmovie.date %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">Image</label>
+    <img src="<%= showmovie.image %>" height = '300px'>
+    <input type="file" class="form-control" name="image" accept='image/*'>
+</div>
+
+
+
+<div class="mb-3">
+    <label class="form-label">rate</label>
+    <input type="text" class="form-control" name="showmovie[rate]" placeholder="<%= showmovie.rate %>", value = "<%= showmovie.rate %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">category</label>
+    <input type="text" class="form-control" name="showmovie[category]" placeholder="<%= showmovie.category %>", value = "<%= showmovie.category %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">timemovie</label>
+    <input type="text" class="form-control" name="showmovie[timemovie]" placeholder="<%= showmovie.timemovie %>", value = "<%= showmovie.timemovie %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">Synopsis</label>
+    <input type="text" class="form-control" name="showmovie[Synopsis]" placeholder="<%= showmovie.Synopsis %>", value = "<%= showmovie.Synopsis %>">
+</div>
+<div class="mb-3">
+    <label class="form-label">trailer</label>
+    <input type="text" class="form-control" name="showmovie[trailer]" placeholder="<%= showmovie.trailer %>", value = "<%= showmovie.trailer %>">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/showmovie">Go back</a>
+</form>
+</div>
+
+<%- include("../in/footer.ejs") %>

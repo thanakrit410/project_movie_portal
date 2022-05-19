@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin : 0;
+    padding: 0;
+    height: 100%;
+}
+body
+{
+    font-family: 'Lato',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(100deg,#690674, rgb(0, 0, 0));
+    overflow: hidden;
+}
+button
+{
+    background-color: #750973;
+    border: none;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+}

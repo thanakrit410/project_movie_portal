@@ -1,0 +1,15 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Cinema.css">
+<body>
+    <div class="container">
+            <% data.forEach(function(item){ %>
+                <p>name:<%= item.movie.name%></p>
+                <% if(item.onair_status){ %>
+                    <p>ฉายแล้ว</p>
+                <% }else{ %>
+                    <p>ยังไม่ฉาย</p>
+                <% } %>
+            <% }) %>  
+    </div>  
+</body>
+<%- include("../in/footer.ejs") %>

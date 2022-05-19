@@ -1,0 +1,46 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Page.css">
+<div class="container">
+<h1>Add your new movie</h1>
+<form action="/showmovie" method="POST" enctype="multipart/form-data">
+<div class="mb-3">
+    <label class="form-label">name</label>
+    <input type="text" class="form-control" name="showmovie[name]" placeholder="name">
+</div>
+<div class="mb-3">
+    <label class="form-label">date</label>
+    <input type="text" class="form-control" name="showmovie[date]" placeholder="date">
+</div>
+<div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control" name="image" accept='image/*'>
+</div>
+
+
+
+<div class="mb-3">
+    <label class="form-label">rate</label>
+    <input type="text" class="form-control" name="showmovie[rate]" placeholder="rate">
+</div>
+<div class="mb-3">
+    <label class="form-label">category</label>
+    <input type="text" class="form-control" name="showmovie[category]" placeholder="category">
+</div>
+<div class="mb-3">
+    <label class="form-label">timemovie</label>
+    <input type="text" class="form-control" name="showmovie[timemovie]" placeholder="timemovie">
+</div>
+<div class="mb-3">
+    <label class="form-label">Synopsis</label>
+    <input type="text" class="form-control" name="showmovie[Synopsis]" placeholder="Synopsis">
+</div>
+<div class="mb-3">
+    <label class="form-label">trailer</label>
+    <input type="text" class="form-control" name="showmovie[trailer]" placeholder="trailer">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/showmovie">Go back</a>
+</form>
+</div>
+
+<%- include("../in/footer.ejs") %>

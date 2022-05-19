@@ -1,0 +1,60 @@
+<%- include("../in/header.ejs") %>
+<link rel="stylesheet" href="/st/Page.css">
+<body>
+    <div class="container">
+    <h1>name:<%= showmovie.name %></h1>
+    <div class="poster d-flex justify-content-center">
+    <img src="<%= showmovie.image %>">
+    </div>
+    <p>date:<%= showmovie.date %></p>
+    <p>rate:<%= showmovie.rate %></p>
+    <p>category:<%= showmovie.category %></p>
+    <p>timemovie:<%= showmovie.timemovie %></p>
+    <p>Synopsis:<%= showmovie.Synopsis %></p>
+    <iframe width="560" height="315" src="<%= showmovie.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br />
+    <% if (currentUser && showmovie.author.id.equals(currentUser._id) || (currentUser &&  currentUser.isAdmin)){ %>
+    <a href="/Pagemovie/<%= showmovie._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+    <form id= 'delete-form' action = "/showmovie/<%= showmovie._id %>?_method=DELETE" method ="POST">
+        <button type='submit' class="btn btn-sm btn-outline-secondary">Delete</button>
+    </form>
+    <% }else{ %>
+            <a></a>
+    <% } %>
+    <h2>Comments</h2>
+
+    <% showmovie.Comments.forEach(function(comment){ %>
+            <p>
+                <strong> <%= comment.author.username %> </strong> -- <%= comment.text %>
+            </p>
+            <% if (currentUser && comment.author.id.equals(currentUser._id) || (currentUser &&  currentUser.isAdmin)){ %>
+                <a href="/Pagemovie/<%= showmovie._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <form id= 'delete-form' action = "/Pagemovie/<%= showmovie._id %>/comments/<%= comment._id %>?_method=DELETE" method ="POST">
+                    <button type='submit' class="btn btn-sm btn-outline-secondary">Delete</button>
+                </form>
+            <% } %>
+
+    <% }) %>
+        <a href="/Pagemovie/<%= showmovie._id %>/comments/addnewcomment" class="btn btn-sm btn-outline-secondary">Add new comment</a>
+        <a href="/theater/<%= showmovie._id %>/cinema" class="btn btn-sm btn-outline-secondary">buy movie tickets</a>
+    
+    <% theaters.forEach(function(theater){ %>
+    <h1>Cima:<%= theater.name %></h1>
+        <a href="/ticket/<%= theater._id %>/<%=showmovie._id %>" class="button button1"><h1><%= theater.name %></h1></a>
+    <% }) %>
+    <% if (showmovie.Cinema == 1){ %>
+        <h1>Hello</h1>
+    <% } %>
+    <% if (showmovie.Cinema == 2){ %>
+        <h1>Hello</h1>
+    <% } %>
+    <% if (showmovie.Cinema == 3){ %>
+        <h1>Hello</h1>
+    <% } %>
+    <% if (showmovie.Cinema == 4){ %>
+        <h1>Hello</h1>
+    <% } %>
+    </div>
+</body>
+    
+<%- include("../in/footer.ejs") %>

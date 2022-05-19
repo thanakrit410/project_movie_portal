@@ -1,0 +1,19 @@
+<%- include("../in/index.ejs") %>
+<link rel="stylesheet" href="/st/Page.css">
+<div class="container">
+<h1>Add your new movie</h1>
+<form action="/Pagemovie/<%= showmovie._id %>/Comments" method="POST">
+<!--<div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" name="comment[author]" placeholder="Your name">
+</div>-->
+<div class="mb-3">
+    <label class="form-label">Comment</label>
+    <input type="text" class="form-control" name="comment[text]" placeholder="Your comment">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/Pagemovie/<%= showmovie._id %>">Go back</a>
+</form>
+</div>
+
+<%- include("../in/footer.ejs") %>
