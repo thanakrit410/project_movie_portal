@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/st/Cinema.css">
 <!-- <link rel="stylesheet" href="/st/index.css">
 <link rel="stylesheet" href="/st/movie.css"> -->
-<div class="container boxmovie">
+<div class="container boxmovie" id="theaterID">
     <div class="list-movie">
         <% data.forEach(function(item){ %>
     <a  href="/Pagemovie/<%= item.movie._id %>">
@@ -13,7 +13,7 @@
             เรื่อง :  <%= item.movie.name %>
           </div>
           <div class="time">
-            เวลาฉาย : <%= item.onair_time %>
+            เวลาฉาย : <%= item.onair_time.toUTCString() %>
           </div>
         </div>
       </div>
@@ -23,14 +23,6 @@
   </div>
 </body>
 <!-- <body>
-
-
-
-
-
-
-
-
     <% data.forEach(function(item){ %>
         <h1>theater:<%= item.theater.name %></h1> 
         <h1>show time:<%= item.onair_time %></h1> 

@@ -1,13 +1,36 @@
 <%- include("../in/header.ejs") %>
     <link rel="stylesheet" href="/st/ticket.css">
+    <link rel="stylesheet" href="/st/movie.css">
 
 
     <body>
         <div class="container">
-            <h1>Ticket page</h1>
-
-            <h1>name:<%= data.movie.name %>
-            </h1>
+            <h1 class="TKP">Ticket page</h1>
+            <div class="container">
+                <div class="movie-full">
+                  <div class="movie-poster">
+                    <img src="<%= data.movie.image %>">
+                  </div>
+          
+                  <div class="movie-detail">
+                    <h1>
+                      <%= data.movie.name %>
+                    </h1>
+                    <div>DATE:<%= data.onair_time.toUTCString() %>
+                    </div>
+                    <div>RATE:<%= data.movie.rate %>
+                    </div>
+                    <div>CATEGORY:<%= data.movie.category %>
+                    </div>
+                    <div>TIMEMOVIE:<%= data.movie.timemovie %>
+                    </div>
+                    <div>SYNOPSIS:<%= data.movie.Synopsis %>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- <h1>name:<%= data.movie.name %>
+            </h1> -->
             <div class="grid-container grid-container--fill" id="allSeat">
                 <% Array.from(Array( data.theater.maxSeat )).forEach(function(item, index) { %>
                     <% if(data.reserved.includes(index+1)) { %>
@@ -25,7 +48,11 @@
                                 <% }) %>
 
             </div>
+            <% if(!currentUser){ %>
+            <button class="btn btn-outline-primary" type="button" onclick="document.location  = '/login'">Buy ticket</button>
+            <% }else{ %>
             <button class="btn btn-outline-primary" type="button" onclick="buyTicket()">Buy ticket</button>
+            <% } %>
         </div>
         <script>
             let selectTargetSeat = null;
