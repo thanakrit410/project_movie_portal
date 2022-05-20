@@ -1,3 +1,6 @@
+body { 
+    font-family: 'Prompt', sans-serif;
+}
 .blog-header-logo
 {
     color: blue;
@@ -10,7 +13,9 @@
 .p-2
 {
     padding: 20px 50px;
-    font-size: 1.25rem;
+    font-size: 2rem;
+    font-family: 'Koulen', cursive;
+    font-weight:400;
     cursor: pointer;
     border: 0px;
     background: transparent;
@@ -18,7 +23,7 @@
     margin: 20px;
     transition: all 0.25s ease;
     margin-top: 0px;
-    color: white;
+    color: black;
 }
 .logo
 {
@@ -38,7 +43,7 @@
     background: linear-gradient(300deg,white, rgb(168, 14, 14));
     left:0;
     bottom: 0;
-    z-index:-1;
+    z-index: index 1;
     transition: all 0.25s ease;
     left: 50%;
     transform: translateX(-50%);
@@ -53,6 +58,7 @@
     overflow: hidden;
     border: 8px solid linear-gradient(300deg,white, rgb(168, 14, 14)) ;
     border-radius: 10px;
+    margin-top: 21px;
 
 }
 .slide figure img
@@ -80,11 +86,6 @@
     80%{left: -300%;}
     85%{left: -400%;}
     100%{left: -400%;}
-}
-body
-{
-    /*background: linear-gradient(100deg,#690674, rgb(0, 0, 0));*/
-    
 }
 .row
 {
@@ -115,7 +116,60 @@ body
 }
 .btn-outline-secondary
 {
-    color:white;
+    color:rgb(2, 2, 2);
     background-color:  linear-gradient(300deg,white, rgb(168, 14, 14));;
 }
+.colorbar
+{
+    
+        width: 100%;
+        background-color:rgb(1, 1, 1);
+        opacity: 0.25;
+        padding: 1.15px;
+        margin-left: 0;
+        margin-top: -20px;
+        margin-bottom: 10px;
+}
+.bg
+{
+
+    background: linear-gradient(300deg,white, rgb(168, 14, 14));
+}
+.container.sortbar
+{
+    display: flex;
+    justify-content: right;
+
+}
+.container.searchbar
+{
+    margin-bottom: -40px;
+}
+select{
+    width: 300px;
+}
+.btn.btn-outline-primary
+{
+    width: 80px;
+}
+.container.sortbar
+{
+    margin-bottom: 60px;
+}
+.btn-outline-secondary
+{
+    width:100px;
+    height: 50px;
+    margin-left: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.25rem;
+    background: linear-gradient(300deg,white, rgb(168, 14, 14));
+    color: rgb(7, 7, 7);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
 

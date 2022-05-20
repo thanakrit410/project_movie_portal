@@ -13,14 +13,15 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(100deg,#690674, rgb(0, 0, 0));
+    background: linear-gradient(300deg,white, rgb(168, 14, 14));
     overflow: hidden;
 }
 button
 {
-    background-color: #750973;
+    background-color: #040404;
     border: none;
-    color: white;
+    font-weight: 600;
+    color: rgb(247, 241, 241);
     padding: 20px 35px;
     text-align: center;
     text-decoration: none;

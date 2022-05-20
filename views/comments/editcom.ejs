@@ -1,7 +1,6 @@
-<%- include("../in/index.ejs") %>
-<link rel="stylesheet" href="/st/Page.css">
+<%- include("../in/header.ejs") %>
 <div class="container">
-<h1>Edit your new movie</h1>
+<h1>Edit your comment</h1>
 <form action="/Pagemovie/<%= showmovie_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
 <div class="mb-3">
     <label class="form-label">Comment</label>

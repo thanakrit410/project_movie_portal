@@ -1,6 +1,36 @@
-<%- include("../in/index.ejs") %>
+<%- include("../in/header2.ejs") %>
 <link rel="stylesheet" href="/st/Cinema.css">
-<body>
+<!-- <link rel="stylesheet" href="/st/index.css">
+<link rel="stylesheet" href="/st/movie.css"> -->
+<div class="container boxmovie">
+    <div class="list-movie">
+        <% data.forEach(function(item){ %>
+    <a  href="/Pagemovie/<%= item.movie._id %>">
+      <div class="card-movie">
+        <img src="<%= item.movie.image %>" class="image-poster" />
+        <div class="overlay">
+          <div class="name">
+            เรื่อง :  <%= item.movie.name %>
+          </div>
+          <div class="time">
+            เวลาฉาย : <%= item.onair_time %>
+          </div>
+        </div>
+      </div>
+    </a>
+    <% }) %>
+    </div>
+  </div>
+</body>
+<!-- <body>
+
+
+
+
+
+
+
+
     <% data.forEach(function(item){ %>
         <h1>theater:<%= item.theater.name %></h1> 
         <h1>show time:<%= item.onair_time %></h1> 
@@ -9,7 +39,7 @@
         <h1>rate :<%= item.movie.rate %></h1> 
         <h1>category :<%= item.movie.category %></h1>
         <h1>timemovie :<%= item.movie.timemovie %></h1>
-        <a href="/Pagemovie/<%= item.theater._id %>" class="btn btn-sm btn-outline-secondary">View</a>
+        <a href="/Pagemovie/<%= item.movie._id %>" class="btn btn-sm btn-outline-secondary">View</a>
     <% }) %>
-</body>
+</body> -->
 <%- include("../in/footer.ejs") %>

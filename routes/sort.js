@@ -9,7 +9,7 @@ const   express = require('express'),
 
 router.get('/aToz', function(req, res){
     console.log("Ok")
-    showmovie.find({}).sort({'name':-1}).exec(function(err, foundshowmovie){
+    showmovie.find({}).sort({'name':1}).exec(function(err, foundshowmovie){
         if(err)
         {
             console.log(err);

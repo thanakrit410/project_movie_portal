@@ -1,0 +1,152 @@
+body { 
+    font-family: 'Prompt', sans-serif;
+}
+.list-movie {
+  display: grid;
+  grid-gap: 20px;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card-movie {
+  position: relative;
+  box-shadow: 1px 1px 10px black;
+  overflow: hidden;
+}
+.card-movie .image-poster {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  transition: all .5s ease-in-out;
+}
+.card-movie .image-poster:hover { 
+    transform: scale(1.2);
+}
+.card-movie .overlay {
+    
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7934524151457458) 50%
+  );
+  padding: 10px 20px;
+  height: 120px;
+}
+.card-movie .overlay .name {
+  font-size: 24px;
+  font-weight: 700;
+}
+.card-movie .overlay .time {
+  font-size: 20px;
+}
+.container.boxmovie
+{
+    margin-bottom: 100px;
+}
+.space
+{
+    margin-bottom: 50px;
+}
+
+/* ------------------------------ page movie ------------------------------------ */
+.movie-full { 
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    background-color:white;
+    grid-gap: 20px;
+    max-width: 1100px;
+    width: 100%;
+    height: 80%;
+    margin-left: 200px;
+    box-shadow: 1px 1px 10px rgb(178, 178, 178);
+    border-radius: 10px;
+}
+.movie-poster { 
+    margin: 50px 0 50px -150px;
+}
+.movie-poster img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px gray;
+}
+.movie-detail { 
+    width: 100%;
+    color: black;
+    padding: 50px 20px;
+}
+.video-preview {
+    margin: 30px auto;
+    width: 900px;
+}
+.video-preview iframe { 
+    width: 100%;
+    height: 500px;
+}
+
+.show-in-theater { 
+    margin: 20px 0;
+    color: black;
+}
+.show-in-theater .theaters {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.show-in-theater .theaters .theater { 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray;
+    padding: 10px;
+    background-color: blanchedalmond;
+}
+.show-in-theater .theaters .theater a { 
+    text-decoration: none;
+    color: black;
+}
+.TRAILER
+{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+
+}
+.Comment
+{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.box.comment
+{
+    width: 50%;
+    padding: 10px;
+    box-shadow: 1px 1px 10px gray;
+    margin: 0;
+    margin-left: 310px;
+    display:block;
+    justify-content: center;
+    text-align: center;
+}
+.btn.btn-sm.btn-outline-secondary.comment
+{   
+    margin-top: 15px;
+    width: 30%;
+} 
+.btAddcomment
+{   
+    margin-left: 500px;
+}
+/* ------------------------------ profile ------------------------------------ */
