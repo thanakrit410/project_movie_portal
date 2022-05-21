@@ -52,12 +52,20 @@
 
                 </div>
             </div>
+            <div class="Buy_ticket">
             <% if(!currentUser){ %>
                 <button class="btn btn-outline-primary" type="button" onclick="document.location  = '/login'">Buy
                     ticket</button>
+                <button class="btn btn-outline-primary" id="reserved">reserved</button>
+                <button class="btn btn-outline-primary" id ="ready">ready</button>
+                <button class="btn btn-outline-primary" id ="select">select</button>
                 <% }else{ %>
                     <button class="btn btn-outline-primary" type="button" onclick="buyTicket()">Buy ticket</button>
-                    <% } %>
+                    <button class="btn btn-outline-primary" id="reserved">reserved</button>
+                    <button class="btn btn-outline-primary" id ="ready">ready</button>
+                    <button class="btn btn-outline-primary" id ="select">select</button>
+                <% } %>
+            </div>
         </div>
         <script>
             let selectTargetSeat = null;
@@ -106,4 +114,4 @@
 
     </body>
 
-    </html>
+<%- include("../in/footer.ejs") %>

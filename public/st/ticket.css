@@ -29,7 +29,7 @@
 }
 
 .seat.reserved {
-    background-color: rgb(255, 20, 20);
+    background-color: rgba(142, 141, 141, 0.638);
 }
   
 .seat.selected {
@@ -93,4 +93,51 @@
       color: rgba(0, 0, 0, 0.2);
     }
   }
+.Buy_ticket
+{
+    margin-top: 20px;
+    
+}
+.btn.btn-outline-primary
+{
+    width: 300px;
+    
+}
+#reserved
+{
+    width: 150px;
+    height: 66px;
+    background-color: rgba(142, 141, 141, 0.638);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-left: 20px;
+    box-shadow: 5px 10px black;
+}
+#ready
+{
+    width: 150px;
+    height: 66px;
+    background-color: deepPink;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-left: 20px;
+    box-shadow: 5px 10px black;
+}
+#select
+{
+    width: 150px;
+    height: 66px;
+    background-color: rgb(20, 255, 36);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-left: 20px;
+    box-shadow: 5px 10px black;
+}
+
 
