@@ -22,17 +22,19 @@ router.get ("/",async function(req, res){
             const movieoftheater = await History_onair.find({movie:movieID})
                            .populate({path: 'movie', model: 'showmovie'})
                            .populate({path: 'theater', model: 'Theater'})
-            /*console.log(movieoftheater)*/
+            console.log(movieoftheater)
+            let date = new Date()
             let theatersOnair = []
             movieoftheater.forEach(function(item){
                     console.log('item',item.theater)
                     theatersOnair.push(item.theater)
+                    console.log(date.toLocaleString());
 
 
             })
 
             console.log("24"+theatersOnair)
-            res.render('showmovie/showmovie.ejs',{showmovie:foundmovie,theaters:theatersOnair})
+            res.render('showmovie/showmovie.ejs',{showmovie:foundmovie,theaters:theatersOnair,movieoftheater:movieoftheater,date:date})
         }
     });
 

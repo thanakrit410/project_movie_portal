@@ -61,21 +61,36 @@
       <div class="show-in-theater">
         <h2>โรงภาพยนต์</h2>
         <div class="theaters">
-          <% theaters.forEach(function(theater){ %>
-            <div class="theater">
-              <a href="/ticket/<%= theater._id %>/<%=showmovie._id %>">
-                <div>
-                  <h3>
-                    <%= theater.name %>
-                  </h3>
-                  <div>รอบ : <%= theater.name %>
-                  </div>
+          <% movieoftheater.forEach(function(movieoftheater){ %>
+            <% if(date> movieoftheater.onair_time){ %>
+              <div class="timeout">
+                <div class="theater">
+                  <a>
+                    <div>
+                      <h3>
+                        <%= movieoftheater.theater.name %>
+                      </h3>
+                      <div>รอบ : <%= movieoftheater.onair_time.toLocaleString() %>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              </a>
-            </div>
-            <% }) %>
+              </div>
+              <% }else{ %>
+                <div class="theater">
+                  <a href="/ticket/<%= movieoftheater.theater._id %>/<%=showmovie._id %>">
+                    <div>
+                      <h3>
+                        <%= movieoftheater.theater.name %>
+                      </h3>
+                      <div>รอบ : <%= movieoftheater.onair_time.toLocaleString() %>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <% } %>
+                  <% }) %>
         </div>
-
       </div>
       <% if (currentUser && showmovie.author.id.equals(currentUser._id) ||(currentUser && currentUser.isAdmin)){ %>
         <a href="/Pagemovie/<%= showmovie._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit Movie</a>

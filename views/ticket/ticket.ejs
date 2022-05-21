@@ -5,65 +5,70 @@
 
     <body>
         <div class="container">
-            <h1 class="TKP">Ticket page</h1>
             <div class="container">
                 <div class="movie-full">
-                  <div class="movie-poster">
-                    <img src="<%= data.movie.image %>">
-                  </div>
-          
-                  <div class="movie-detail">
-                    <h1>
-                      <%= data.movie.name %>
-                    </h1>
-                    <div>DATE:<%= data.onair_time.toUTCString() %>
+                    <div class="movie-poster">
+                        <img src="<%= data.movie.image %>">
                     </div>
-                    <div>RATE:<%= data.movie.rate %>
+
+                    <div class="movie-detail">
+                        <h1>
+                            <%= data.movie.name %>
+                        </h1>
+                        <div>DATE:<%= data.onair_time.toLocaleString() %>
+                        </div>
+                        <div>RATE:<%= data.movie.rate %>
+                        </div>
+                        <div>CATEGORY:<%= data.movie.category %>
+                        </div>
+                        <div>TIMEMOVIE:<%= data.movie.timemovie %>
+                        </div>
+                        <div>SYNOPSIS:<%= data.movie.Synopsis %>
+                        </div>
                     </div>
-                    <div>CATEGORY:<%= data.movie.category %>
-                    </div>
-                    <div>TIMEMOVIE:<%= data.movie.timemovie %>
-                    </div>
-                    <div>SYNOPSIS:<%= data.movie.Synopsis %>
-                    </div>
-                  </div>
                 </div>
             </div>
             <!-- <h1>name:<%= data.movie.name %>
             </h1> -->
-            <div class="grid-container grid-container--fill" id="allSeat">
-                <% Array.from(Array( data.theater.maxSeat )).forEach(function(item, index) { %>
-                    <% if(data.reserved.includes(index+1)) { %>
+            <div class="screen">
+                <div class="theatrescreen">
+                    <div class="screenArea"><span>  SCREEN  IMAX  APmovie </span></div>
+                </div>
+                <div class="grid-container grid-container--fill" id="allSeat">
+                    <% Array.from(Array( data.theater.maxSeat )).forEach(function(item, index) { %>
+                        <% if(data.reserved.includes(index+1)) { %>
 
 
-                        <div class="seat reserved" onclick="selectSeat(event)">
-                            <%= index+1 %>
-                        </div>
-
-                        <%}else{%>
-                            <div class="seat" onclick="selectSeat(event)">
+                            <div class="seat reserved" onclick="selectSeat(event)">
                                 <%= index+1 %>
                             </div>
-                            <%}%>
-                                <% }) %>
 
+                            <%}else{%>
+                                <div class="seat" onclick="selectSeat(event)">
+                                    <%= index+1 %>
+                                </div>
+                                <%}%>
+                                    <% }) %>
+
+                </div>
             </div>
             <% if(!currentUser){ %>
-            <button class="btn btn-outline-primary" type="button" onclick="document.location  = '/login'">Buy ticket</button>
-            <% }else{ %>
-            <button class="btn btn-outline-primary" type="button" onclick="buyTicket()">Buy ticket</button>
-            <% } %>
+                <button class="btn btn-outline-primary" type="button" onclick="document.location  = '/login'">Buy
+                    ticket</button>
+                <% }else{ %>
+                    <button class="btn btn-outline-primary" type="button" onclick="buyTicket()">Buy ticket</button>
+                    <% } %>
         </div>
         <script>
             let selectTargetSeat = null;
             function selectSeat(event) {
                 if (!event.target.classList.contains('reserved')) {
                     //ถ้ามีการเลือกแล้วให้ removeclass นี้ออก
-                    if(event.target.classList.contains('selected')){
+                    if (event.target.classList.contains('selected')) {
                         event.target.classList.remove("selected");
                     }
-                    else{
-                        
+                    else {
+
                         event.target.classList.add("selected");
                     }
                 }

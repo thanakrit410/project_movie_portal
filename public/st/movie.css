@@ -108,6 +108,10 @@ body {
     padding: 10px;
     background-color: blanchedalmond;
 }
+.show-in-theater .theaters .timeout .theater 
+{
+    background-color: gray;
+}
 .show-in-theater .theaters .theater a { 
     text-decoration: none;
     color: black;

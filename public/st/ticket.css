@@ -1,17 +1,22 @@
 .grid-container {
+    padding-left:225px;
+    padding-right: 225px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     display: grid;
     grid-gap: 10px;
+    background-color: #060606;
 }
 
 .grid-container--fill {
     text-align: center;
-    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    box-shadow: 0px -2px 20px 10px rgb(0 0 0 / 52%);
 }
 
 /* .grid-container--fit {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 } */
-
 
 
 
@@ -29,5 +34,63 @@
   
 .seat.selected {
     background-color: rgb(20, 255, 36);
+  }
+
+.screenArea {
+    background: rgb(249, 247, 247);
+    height: 175px;
+    width: 100%;
+    margin: 0.8rem 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0px 12px 20px 10px rgb(216 16 247);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  
+    text-align: center;
+}
+  
+.screenArea span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 8rem;
+    color: #dee2e6;
+    text-shadow:5px 5px 5px #000; 
+}
+.theatrescreen {
+    margin-top: 1.5rem;
+    perspective: 500px;
+    height: 300px;
+    background-color: #000000;
+    padding-top: 20px;
+    margin-top: 50px;
+    box-shadow: 0px -2px 20px 10px rgb(0 0 0 / 52%);
+  }
+/* MEDIA QUERY  */
+@media only screen and (max-width: 768px) {
+    .screenArea {
+      background: #f8f6d8;
+      height: 80px;
+      width: 100%;
+      margin: 0.2rem auto;
+      transform: rotateX(-45deg);
+      box-shadow: 1px 5px 20px #f8f5cd;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+  
+      text-align: center;
+    }
+  
+    .screenArea span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      color: rgba(0, 0, 0, 0.2);
+    }
   }
 
