@@ -153,4 +153,21 @@ body {
 {   
     margin-left: 500px;
 }
+#delete-form
+{
+    display: inline;
+}
+#btnMovie
+{
+
+    width: 150px;
+}
 /* ------------------------------ profile ------------------------------------ */
+.note
+{
+    color: rgb(194, 182, 182);
+}
+#detail-profile
+{
+   box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;;
+}

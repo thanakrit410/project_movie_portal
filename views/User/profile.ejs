@@ -1,25 +1,41 @@
 <%- include("../in/header.ejs") %>
-<link rel="stylesheet" href="/st/movie.css">
-<body>
-    <div class="container">
-        <h1>User profile</h1>
-        <p><%= user.Name %></p>
-        <img src="<%= user.profileImage %>" height = '300px'>
-        <p>
-            <a href='mailto: <%= user.email %>'> <%= user.email %></a>
-        </p>
-        <h3>Your collections:</h3>
-        <ul>
-            <% Comment.forEach(function(Comment){ %>
-                <li><a href='/Pagemovie/<%= Comment.movieID %>'><%= Comment.text %></a></li>
-            <% });%>
-        </ul>
-        <% if(currentUser && currentUser.isAdmin){ %>
-            <button class="p-2 link-secondary" onclick="document.location = '/Addmovie'">ADDMOVIE</button>
-        <% } %>
+    <link rel="stylesheet" href="/st/movie.css">
 
-        
-    </div>
-</body>
-    
-<%- include("../in/footer.ejs") %>
+    <body>
+        <div class="container">
+            <div class="movie-full" id="detail-profile">
+                <div class="movie-poster">
+                    <img src="<%= user.profileImage %>">
+                </div>
+
+                <div class="movie-detail ">
+                    <h1>User profile</h1>
+                </br>
+                    <h4>
+                       Name : <%= user.Name %>
+                    </h4>
+                </br>  
+                    <h4>
+
+                            Email Address : <%= user.email %>
+
+                    </h4>
+                </br>
+                    <h3>Your review history:</h3>
+                    <p class="note">Click on the review text to go to the movie you've reviewed.</p>
+                    <ul>
+                        <% Comment.forEach(function(Comment){ %>
+                            <li><a href='/Pagemovie/<%= Comment.movieID %>'>
+                                    <%= Comment.text %>
+                                </a></li>
+                            <% });%>
+                    </ul>
+                    <% if(currentUser && currentUser.isAdmin){ %>
+                        <button class="p-2 link-secondary" onclick="document.location = '/Addmovie'">ADDMOVIE</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <%- include("../in/footer.ejs") %>

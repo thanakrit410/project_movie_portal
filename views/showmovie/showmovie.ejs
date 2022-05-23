@@ -93,9 +93,10 @@
         </div>
       </div>
       <% if (currentUser && showmovie.author.id.equals(currentUser._id) ||(currentUser && currentUser.isAdmin)){ %>
-        <a href="/Pagemovie/<%= showmovie._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit Movie</a>
+        <a href="/Pagemovie/<%= showmovie._id %>/edit" class="btn btn-sm btn-outline-secondary" id="btnMovie">Edit
+          Movie</a>
         <form id="delete-form" action="/showmovie/<%= showmovie._id %>?_method=DELETE" method="POST">
-          <button type="submit" class="btn btn-sm btn-outline-secondary">
+          <button type="submit" class="btn btn-sm btn-outline-secondary" id="btnMovie">
             Delete Movie
           </button>
         </form>
