@@ -1,8 +1,8 @@
-<%- include("../in/index.ejs") %>
+<%- include("../in/header.ejs") %>
 <link rel="stylesheet" href="/st/Page.css">
 <div class="container">
 <h1>Edit your new movie</h1>
-<form action="/showmovie/<%= showmovie.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<form action="/showmovie/<%= showmovie._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 <div class="mb-3">
     <label class="form-label">name</label>
     <input type="text" class="form-control" name="showmovie[name]" placeholder="<%= showmovie.name %>", value = "<%= showmovie.name %>">

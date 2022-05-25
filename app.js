@@ -21,6 +21,7 @@ const   indexRoutes = require('./routes/index'),
 		searchRoutes	= require('./routes/search'),
 		sortRoutes     = require('./routes/sort'),
 		historyRoutes     = require('./routes/history'),
+		editRoutes = require('./routes/edit'),
 	  	commentRoutes = require('./routes/comments');
 
 
@@ -64,6 +65,10 @@ app.use('/Theater',TheaterRoutes);
 app.use('/search',searchRoutes);
 app.use('/sort',sortRoutes);
 app.use('/history',historyRoutes);
+app.use('/edit', editRoutes);
+
+
+
 
 app.listen(4000,function(){
 	console.log("Activated");

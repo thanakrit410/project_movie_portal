@@ -57,32 +57,6 @@ router.get ("/:theaterID",function(req, res){
 
 });
 
-router.get("/edit",middleware.checkMovieAdmin,function(req, res){
-    showmovie.findById(req.params.id, function(err, foundmovie){
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-            res.render('showmovie/edit.ejs',{showmovie:foundmovie})
-        }
-    });
-
-});
-router.get("/edit",middleware.checkMovieAdmin,function(req, res){
-    showmovie.findById(req.params.id, function(err, foundmovie){
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-            res.render('showmovie/edit.ejs',{showmovie:foundmovie})
-        }
-    });
-
-});
 
 
 

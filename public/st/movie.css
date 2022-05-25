@@ -6,11 +6,13 @@ body {
   grid-gap: 20px;
   /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
 }
 .card-movie {
   position: relative;
   box-shadow: 1px 1px 10px black;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .card-movie .image-poster {
   width: 100%;
