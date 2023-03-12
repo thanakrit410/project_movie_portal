@@ -26,7 +26,7 @@ const   indexRoutes = require('./routes/index'),
 
 
 //mongoose.connect('mongodb://localhost/APmovie');
-mongoose.connect('mongodb+srv://aomsin191144:191144Zs@cluster0.15o8u.mongodb.net/?retryWrites=true&w=majority');
+//mongoose.connect('mongodb+srv://aomsin191144:191144Zs@cluster0.15o8u.mongodb.net/?retryWrites=true&w=majority');
 app.set("view engine","ejs");
 app.use(express.static("./public"));
 app.use(bodyParser.urlencoded({extended: true}));
